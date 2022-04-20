@@ -1,8 +1,14 @@
 const express = require("express");
-const app = express();
+const peças = require('./src/routes/peças.routes')
 
-app.get('/', (req, res) => {
-    res.send('teste')
-})
+const routes = (app) => {
+    app.route('/').get((req,res) =>{
+        res.status(200).send('teste')
+    })
 
-app.listen(4005, ()=> 'Rodando na porta 4005')
+    app.use(
+        express.json(),
+        peças
+    )
+}
+module.exports = routes;
