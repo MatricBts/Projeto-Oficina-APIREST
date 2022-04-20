@@ -14,6 +14,14 @@ const db = [
         quantidade: 6,
         marca: 'nakata',
         garantia: 90
+    },
+    {
+        nome: 'amortecedor',
+        preço: 110,
+        categoria: 'suspensao',
+        quantidade: 2,
+        marca: 'nakata',
+        garantia: 360
     }
 ]
 
