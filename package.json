@@ -20,6 +20,7 @@
   "homepage": "https://github.com/MatricBts/Projeto-Oficina-APIREST#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "heroku": "^7.60.1",
     "nodemon": "^2.0.15"
   }
 }
