@@ -10,5 +10,5 @@ const routes = (app) => {
         express.json(),
         peças
     )
-}
+}//dale
 module.exports = routes;
