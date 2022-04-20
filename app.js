@@ -1,9 +1,9 @@
 const express = require('express')
-const routes = require('./teste')
+const routes = require('./index')
 
 const app = express();
 app.use(express.json());
 
 routes(app);
 
-app.listen(4005, () => 'Rodando na porta 4005')
+app.listen(4005, () => console.log('Rodando em: http://localhost:4005'))
