@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router();
-const db = require('./../../infra/db.js')
 const peçasControllers = require('./../controllers/peças.controllers.js')
 
 router
@@ -18,9 +17,14 @@ router
         const peças = await peçasControllers.encontrarPorCategoria(categoria.categoria);
         res.json(peças)
     })
+    .post('/cadastro/pecas', (req, res) => {
+        peçasControllers.cadastrar(req.body)
+        res.send('cadastrado')
+    })
 
-    .post('/pecas', (req, res) => res.send('post'))
-    .put('/pecas', (req, res) => res.send('post'))
+    .put('/pecas', (req, res) => {
+        res.send('post')
+    })
     .delete('/pecas', (req, res) => res.send('post'))
 
 module.exports = router;
