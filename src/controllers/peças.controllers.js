@@ -23,6 +23,14 @@ const peçasControllers = {
             }   
         })
         return peçasRetorno;
+    },
+
+    cadastrar: async function(rpeça){
+        await db.push(rpeça)
+    },
+
+    atualizar: async function(){
+        
     }
 }
 
