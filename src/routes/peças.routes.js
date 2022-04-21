@@ -22,7 +22,9 @@ router
         res.send('cadastrado')
     })
 
-    .put('/pecas', (req, res) => {
+    .put('/atualizar/pecas', (req, res) => {
+        const {body: {nome, mudanca}} = req;
+        peçasControllers.atualizar( nome, mudanca )
         res.send('post')
     })
     .delete('/pecas', (req, res) => res.send('post'))
