@@ -29,7 +29,17 @@ const peçasControllers = {
         await db.push(rpeça)
     },
 
-    atualizar: async function(){
+    atualizar: async function(rnome, rmudanca){
+        db.forEach( peça => {
+            if(peça.nome === rnome){
+                Object.keys(peça).forEach( chaves => {
+                    if(chaves == Object.keys(rmudanca)[0]){
+                        peça[chaves] = rmudanca[Object.keys(rmudanca)[0]]
+                    }
+                })
+            }
+        })
+
         
     }
 }
