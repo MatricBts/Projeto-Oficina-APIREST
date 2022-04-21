@@ -27,7 +27,8 @@ router
         res.send('atualizado')
     })
     .delete('/pecas', (req, res) => {
-        peçasControllers.delete()
+        const {body: {exclusao}} = req
+        peçasControllers.delete(exclusao)
         res.send('deletado')
     })
 

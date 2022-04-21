@@ -10,7 +10,7 @@ const db = [
     {
         nome: 'terminal direcao',
         preço: 35,
-        categoria: 'suspensao',
+        categoria: 'suspencao',
         quantidade: 6,
         marca: 'nakata',
         garantia: 90
