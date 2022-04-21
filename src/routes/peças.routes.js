@@ -21,12 +21,15 @@ router
         peçasControllers.cadastrar(req.body)
         res.send('cadastrado')
     })
-
     .put('/atualizar/pecas', (req, res) => {
         const {body: {nome, mudanca}} = req;
         peçasControllers.atualizar( nome, mudanca )
-        res.send('post')
+        res.send('atualizado')
     })
-    .delete('/pecas', (req, res) => res.send('post'))
+    .delete('/pecas', (req, res) => {
+        const {body: {exclusao}} = req
+        peçasControllers.delete(exclusao)
+        res.send('deletado')
+    })
 
 module.exports = router;

@@ -30,17 +30,33 @@ const peçasControllers = {
     },
 
     atualizar: async function(rnome, rmudanca){
-        db.forEach( peça => {
-            if(peça.nome === rnome){
-                Object.keys(peça).forEach( chaves => {
-                    if(chaves == Object.keys(rmudanca)[0]){
-                        peça[chaves] = rmudanca[Object.keys(rmudanca)[0]]
-                    }
-                })
-            }
-        })
-
+        const atributosQueIraoMudar = Object.keys(rmudanca); // pega os atributos que irã ser atualizado
         
+        db.forEach( peça => {
+            if(peça.nome === rnome){ // filtra pelo nome da peça e quando achar inicia a mudança
+                atributosQueIraoMudar.forEach( atributo => { 
+                    peça[atributo] = rmudanca[atributo] // procura na peça atributos que irão ser mudadeo 
+                })   
+            }        
+        })  
+    },
+
+    delete: async function(ratributos){
+        const atributosParaExclusao = Object.keys(ratributos) // ARRAY COM INFORÇÕES DO FILTRO POR ATRIBUTO
+        let pecaAtendeRequisitos = 0  // CONTADOR PARA SABER SE TODOS OS ATRIBUTOS ATENDEM A O FILTRO
+
+        db.forEach( peça => { // FOR PELO DB
+            atributosParaExclusao.forEach( (atributo, index) => { // FOR PELO ATRIBUTO
+                if(ratributos[atributo] === peça[atributo]){
+                    ++pecaAtendeRequisitos
+                    
+                    if(pecaAtendeRequisitos === atributosParaExclusao.length){ // SE ATENDER A O REQUISITO FAZ A EXCLUSÃO
+                        const index = db.findIndex( peças => peças === peça)
+                        db.splice(index, 1)
+                    }
+                }
+            })
+        })
     }
 }
 
