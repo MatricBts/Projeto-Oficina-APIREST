@@ -30,17 +30,20 @@ const peçasControllers = {
     },
 
     atualizar: async function(rnome, rmudanca){
-        db.forEach( peça => {
-            if(peça.nome === rnome){
-                Object.keys(peça).forEach( chaves => {
-                    if(chaves == Object.keys(rmudanca)[0]){
-                        peça[chaves] = rmudanca[Object.keys(rmudanca)[0]]
-                    }
-                })
-            }
-        })
-
+        const atributosQueIrãoMudar = Object.keys(rmudanca); // pega os atributos que irã ser atualizado
         
+        db.forEach( peça => {
+            if(peça.nome === rnome){ // filtra pelo nome da peça e quando achar inicia a mudança
+                atributosQueIrãoMudar.forEach( atributo => { 
+                    peça[atributo] = rmudanca[atributo] // procura na peça atributos que irão ser mudadeo 
+                })   
+            }        
+        })  
+    },
+
+    delete: async function(){
+        // db.splice(1,1);
+        console.log(index)
     }
 }
 
