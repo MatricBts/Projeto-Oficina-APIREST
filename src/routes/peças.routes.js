@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
-const peçasControllers = require('./../controllers/peças.controllers.js')
+const peçasControllers = require('./../controllers/peças.controllers')
+const database = require('./../infra/db')
 
 router
     .get('/pecas', async (req,res) => {
@@ -17,7 +18,8 @@ router
         const peças = await peçasControllers.encontrarPorCategoria(categoria.categoria);
         res.json(peças)
     })
-    .post('/pecas', (req, res) => {
+    .post('/pecas', async (req, res) => {
+        await database.sync()
         peçasControllers.cadastrar()
         res.send('cadastrado')
     })

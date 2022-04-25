@@ -1,6 +1,8 @@
 
 const Pecas = require('../models/Pecas.model')
 
+
+
 const peçasControllers = {
     // mostrarPeças: async function() {
     //     return await db;

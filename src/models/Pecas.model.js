@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const database = require('./../../infra/config/db.js');
+const database = require('./../infra/db');
 
 const Peca = database.define('peca', {
     id:{
