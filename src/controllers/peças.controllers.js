@@ -1,5 +1,4 @@
-const Sequelize = require('sequelize');
-const database = require('../../infra/config/db');
+
 const Pecas = require('../models/Pecas.model')
 
 const peçasControllers = {
