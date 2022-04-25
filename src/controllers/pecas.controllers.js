@@ -1,8 +1,6 @@
 const database = require('../infra/db')
 const Pecas = require('../models/Pecas.model')
 
-
-
 const peçasControllers = {
   mostrarPeças: async function(res) {
     await database.sync();
@@ -67,7 +65,7 @@ const peçasControllers = {
             res.send('deletado')
         })
         .catch((error)=>{
-            console.log(error)
+            res.send(error)
         })
     }
 }
