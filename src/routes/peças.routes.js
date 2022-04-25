@@ -18,7 +18,7 @@ router
         res.json(peças)
     })
     .post('/pecas', (req, res) => {
-        peçasControllers.cadastrar(req.body)
+        peçasControllers.cadastrar()
         res.send('cadastrado')
     })
     .put('/pecas', (req, res) => {
