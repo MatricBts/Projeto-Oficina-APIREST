@@ -1,4 +1,4 @@
-
+const database = require('../infra/db')
 const Pecas = require('../models/Pecas.model')
 
 
@@ -29,8 +29,9 @@ const peçasControllers = {
     // },
 
     cadastrar: async function(){
+        await database.sync()
         await Pecas.create({
-            nome: 'judite',
+            nome: 'rocambole',
         })
     },
 
