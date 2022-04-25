@@ -7,10 +7,6 @@ const peçasControllers = {
     //     return await db;
     // },
 
-    somenteTeste: async function(){
-        console.log('teste')
-    },
-    
     // encontrarPorNome: async function(rnome) {
     //     const peçaRetorno = [];
     //     await db.forEach(peça => {
