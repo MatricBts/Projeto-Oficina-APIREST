@@ -4,11 +4,16 @@ const Pecas = require('../models/Pecas.model')
 
 
 const peçasControllers = {
-    mostrarPeças: async function() {
-        await database.sync()
-        pecas = await Pecas.findAll()
-        return pecas;
-    },
+  mostrarPeças: async function(res) {
+    await database.sync();
+    await Pecas.findAll()
+      .then((pecas)=>{
+          res.json(pecas)
+      })
+      .catch((error)=>{
+          console.log(error)
+      })
+  },
 
     // encontrarPorNome: async function(rnome) {
     //     const peçaRetorno = [];
@@ -30,10 +35,16 @@ const peçasControllers = {
     //     return peçasRetorno;
     // },
 
-    cadastrar: async function(){
-        await database.sync()
+    cadastrar: async function(res){
+        await database.sync();
         await Pecas.create({
             nome: 'rocambole',
+        })
+        .then(()=>{
+            res.send('cadastrado')
+        })
+        .catch((error)=>{
+            console.log(error)
         })
     },
 
@@ -49,23 +60,16 @@ const peçasControllers = {
     //     })  
     // },
 
-    // delete: async function(ratributos){
-    //     const atributosParaExclusao = Object.keys(ratributos) // ARRAY COM INFORÇÕES DO FILTRO POR ATRIBUTO
-    //     let pecaAtendeRequisitos = 0  // CONTADOR PARA SABER SE TODOS OS ATRIBUTOS ATENDEM A O FILTRO
-
-    //     db.forEach( peça => { // FOR PELO DB
-    //         atributosParaExclusao.forEach( (atributo, index) => { // FOR PELO ATRIBUTO
-    //             if(ratributos[atributo] === peça[atributo]){
-    //                 ++pecaAtendeRequisitos
-                    
-    //                 if(pecaAtendeRequisitos === atributosParaExclusao.length){ // SE ATENDER A O REQUISITO FAZ A EXCLUSÃO
-    //                     const index = db.findIndex( peças => peças === peça)
-    //                     db.splice(index, 1)
-    //                 }
-    //             }
-    //         })
-    //     })
-    // }
+    deletar: async function(ratributos, res){
+        await database.sync();
+        await Pecas.destroy({where: ratributos})
+        .then(()=>{
+            res.send('deletado')
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+    }
 }
 
 module.exports = peçasControllers;
