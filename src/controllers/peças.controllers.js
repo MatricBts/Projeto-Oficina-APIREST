@@ -6,6 +6,10 @@ const peçasControllers = {
     // mostrarPeças: async function() {
     //     return await db;
     // },
+
+    somenteTeste: async function(){
+        console.log('teste')
+    },
     
     // encontrarPorNome: async function(rnome) {
     //     const peçaRetorno = [];
