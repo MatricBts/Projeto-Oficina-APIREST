@@ -4,9 +4,11 @@ const Pecas = require('../models/Pecas.model')
 
 
 const peçasControllers = {
-    // mostrarPeças: async function() {
-    //     return await db;
-    // },
+    mostrarPeças: async function() {
+        await database.sync()
+        pecas = await Pecas.findAll()
+        return pecas;
+    },
 
     // encontrarPorNome: async function(rnome) {
     //     const peçaRetorno = [];
