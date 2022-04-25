@@ -1,5 +1,5 @@
 const express = require("express");
-const peças = require('./routes/peças.routes')
+const peças = require('./routes/pecas.routes')
 
 const routes = (app) => {
     app.route('/').get((req,res) =>{
