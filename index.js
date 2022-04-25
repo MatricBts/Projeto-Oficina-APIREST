@@ -1,14 +1,10 @@
-const express = require("express");
-const peças = require('./src/routes/peças.routes')
 
-const routes = (app) => {
-    app.route('/').get((req,res) =>{
-        res.status(200).send('teste')
-    })
+const express = require('express')
+const routes = require('./src/app')
 
-    app.use(
-        express.json(),
-        peças
-    )
-}//dale
-module.exports = routes;
+const app = express();
+app.use(express.json());
+
+routes(app);
+
+app.listen(4005, () => console.log('Rodando em: http://localhost:4005'))
