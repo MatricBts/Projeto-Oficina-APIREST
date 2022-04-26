@@ -2,32 +2,24 @@ const express = require('express')
 const router = express.Router();
 const peçasControllers = require('../controllers/pecas.controllers')
 
-
 router
     .get('/pecas', async (req,res) => {
       await peçasControllers.mostrarPeças(res);
     })
-    // .get('/pecas/nomeco', async (req,res) => {
-    //     const {body: nome} = req
-    //     const peça = await peçasControllers.encontrarPorNome(nome.nome);
-    //     res.json(peça)
-    // })
-    // .get('/pecas/categoria', async (req,res) => {
-    //     const {body: categoria} = req
-    //     const peças = await peçasControllers.encontrarPorCategoria(categoria.categoria);
-    //     res.json(peças)
-    // })
+    .get('/pecas/atributos', async (req,res) => {
+        const {body: dados} = req
+        await peçasControllers.encontrarPorAtributos(dados, res);
+    })
     .post('/pecas', async (req, res) => {
       peçasControllers.cadastrar(res);
     })
-    // .put('/pecas', (req, res) => {
-    //     const {body: {nome, mudanca}} = req;
-    //     peçasControllers.atualizar( nome, mudanca )
-    //     res.send('atualizado')
-    // })
+    .put('/pecas', async (req, res) => {
+      const {body: {dados, dadosNovos}} = req;
+      await peçasControllers.atualizar( dados, dadosNovos, res)
+    })
     .delete('/pecas', (req, res) => {
-      const {body: exclusao} = req
-      peçasControllers.deletar(exclusao, res);
+      const {body: dados} = req
+      peçasControllers.deletar(dados, res);
     })
 
 module.exports = router;
