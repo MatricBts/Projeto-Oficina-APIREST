@@ -32,4 +32,4 @@ npm start
     categoria
     quantidade
     marca
-    quantidade
+    garantia
