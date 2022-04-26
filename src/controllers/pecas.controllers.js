@@ -57,7 +57,26 @@ const peçasControllers = {
       .catch((error)=>{
           res.send(error)
       })
+  },
+
+  popularTabela: async function(res){
+    await database.sync();
+    await Pecas.bulkCreate([
+      {nome: 'filtro', preço: 20, categoria: 'revisão', quantidade: 40, marca: 'wega', garantia: 90},
+      {nome: 'terminal direcao', preço: 45, categoria: 'suspensao', quantidade: 8, marca: 'nakata', garantia: 90},
+      {nome: 'pivo', preço: 40, categoria: 'suspensao', quantidade: 20, marca: 'nakata', garantia: 90},
+      {nome: 'junta do cabecote', preço: 60, categoria: 'motor', quantidade: 10, marca: 'sabo', garantia: 90},
+      {nome: 'aditivo', preço: 25, categoria: 'arrefecimento', quantidade: 60, marca: 'paraflu', garantia: 90},
+      {nome: 'reservatorio', preço: 55, categoria: 'arrefecimento', quantidade: 3, marca: 'gonel', garantia: 90}
+    ])
+      .then(()=>{
+        res.send('tabela populada')
+      })
+      .catch((error)=>{
+        res.send(error)
+      })
   }
+
 }
 
 module.exports = peçasControllers;
