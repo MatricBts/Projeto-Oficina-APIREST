@@ -1,4 +1,3 @@
-const res = require('express/lib/response');
 const database = require('../infra/db')
 const Pecas = require('../models/Pecas.model')
 
