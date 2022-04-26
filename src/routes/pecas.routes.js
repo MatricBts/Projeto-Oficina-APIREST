@@ -12,7 +12,11 @@ router
     })
     .post('/pecas', async (req, res) => {
       const {body} = req
+      console.log(body)
       pecasControllers.cadastrar(body, res);
+    })
+    .post('/pecas/populate', async (req, res)=>{
+      await pecasControllers.popularTabela(res)
     })
     .put('/pecas', async (req, res) => {
       const {body: {dados, dadosNovos}} = req;

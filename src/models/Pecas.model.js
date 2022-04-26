@@ -12,14 +12,14 @@ const Peca = database.define('peca', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    // preço:{
-    //     type: Sequelize.INTEGER,
-    //     allowNull: false
-    // },
-    // categoria: Sequelize.STRING,
-    // quantidade: Sequelize.INTEGER,
-    // marca: Sequelize.STRING,
-    // garantia: Sequelize.INTEGER
+    preço:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    categoria: Sequelize.STRING,
+    quantidade: Sequelize.INTEGER,
+    marca: Sequelize.STRING,
+    garantia: Sequelize.INTEGER
    
 })
 
