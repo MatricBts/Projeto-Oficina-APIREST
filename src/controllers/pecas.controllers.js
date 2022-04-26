@@ -18,23 +18,21 @@ const peçasControllers = {
     await database.sync();
     await Pecas.findOne({where: rdados})
       .then((peca)=>{
-        res.json(peca)
+        !peca ? res.send('Peça não encontrada') : res.json(peca)
       })
       .catch((error)=>{
         res.send(error)
       })
   },
 
-  cadastrar: async function(res){
+  cadastrar: async function(rpeca, res){
     await database.sync();
-    await Pecas.create({
-      nome: 'rocambole',
-    })
+    await Pecas.create(rpeca)
       .then(()=>{
         res.send('cadastrado')
       })
       .catch((error)=>{
-        res.send(error)
+        res.send(error.errors[0].message)
       })
   },
 
@@ -42,8 +40,8 @@ const peçasControllers = {
     console.log(rdados)
     await database.sync();
     await Pecas.update(rnovosDados,{where: rdados})
-      .then(()=>{
-        res.send('atualizado')
+      .then((qtdPecasEncontradas)=>{
+        qtdPecasEncontradas < 1 ? res.send('Peça não encontrada') : res.send(`${rdados.nome} foi atualizado com sucesso`)
       })
       .catch((error)=>{
         res.send(error)
@@ -53,8 +51,8 @@ const peçasControllers = {
   deletar: async function(rdados, res){
     await database.sync();
     await Pecas.destroy({where: rdados})
-      .then(()=>{
-          res.send('deletado')
+      .then((qtdPecasEncontradas)=>{
+        qtdPecasEncontradas < 1 ? res.send('Peça não encontrada') : res.send(`${rdados.nome} foi deletado com sucesso`)
       })
       .catch((error)=>{
           res.send(error)
