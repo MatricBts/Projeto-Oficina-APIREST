@@ -34,8 +34,9 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
 ```  
     
     
-    
-<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+![cadastro](https://user-images.githubusercontent.com/55266551/165860397-52b4b98b-62a9-45ec-9cf2-7e5c218cf396.png)
+
+
     
 <li>Buscando todos os cadastros da entidade:</li>
 <p>Deve-se usar o metodo GET acessando o link com a entidade desejada</p>
