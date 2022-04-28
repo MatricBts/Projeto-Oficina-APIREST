@@ -12,7 +12,6 @@ router
   })
   .post('/pecas', async (req, res) => {
     const {body} = req
-    console.log(body)
     pecasControllers.cadastrar(body, res);
   })
   .post('/pecas/populate', async (req, res)=>{
