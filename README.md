@@ -34,7 +34,8 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
 ```  
     
     
-![cadastro](https://user-images.githubusercontent.com/55266551/165860397-52b4b98b-62a9-45ec-9cf2-7e5c218cf396.png)
+![cadastro](https://user-images.githubusercontent.com/55266551/165861027-ea12c351-97e8-4b2d-b56f-3e6f1d58393c.png)
+
 
 
     
@@ -58,11 +59,12 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas/atributos   // Link com a e
 ```  
 
 
-<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+
+![filtro-por-nome](https://user-images.githubusercontent.com/55266551/165861067-61b85e6e-97e8-4f71-81bf-c0c500aab465.png)
+
     
     
-    
-<li>Atualizando cadastro da entidade:</li>
+<li>Atualizando registro da entidade:</li>
 <p>Deve-se usar o metodo PUT acessando o link com a entidade desejada e usando um atributo para busca e outro(s) que irão ser modificados</p>
 
 ```  
@@ -70,7 +72,7 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
 ```  
 
 
-<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+![update](https://user-images.githubusercontent.com/55266551/165861114-ba1ee830-e1be-40bc-878a-952a141a4a7a.png)
 
     
     
@@ -82,7 +84,8 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
 ```  
 
 
-<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+![delete](https://user-images.githubusercontent.com/55266551/165861133-3e67cde6-4c38-4a52-b1ae-325bdc61a5e2.png)
+
     
     
     
