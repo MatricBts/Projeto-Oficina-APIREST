@@ -25,7 +25,7 @@ npm start
 ```  
     
     
-<h2>:waiter: Para usar API sem precisar baixar </h2>
+<h2>:rocket: Para usar API sem precisar baixar </h2>
 
     
 <h2>:key: Entidades do Projeto</h2>
