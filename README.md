@@ -26,7 +26,15 @@ npm start
     
     
 <h2>:rocket: Para usar API sem precisar baixar </h2>
-
+    <li>Efetuando um cadastro:</li>
+   <p>Deve se usar o metodo post acessando o link com a entidade desejada passando o objeto com os atributos requeridos </p>
+    
+    ```  
+https://oficina-mecanica-resilia.herokuapp.com/pecas   // Exemplo com a entidade PEÇAS, caso queira outra entidade basta substituir
+```  
+    
+    
+    <p>Botar uma imagem aqui da requisição</p>
     
 <h2>:key: Entidades do Projeto</h2>
     <p><b>Peças</b></p>
