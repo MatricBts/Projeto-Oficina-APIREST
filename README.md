@@ -11,7 +11,7 @@ assim tendo um controle melhor do estabelecimento.
     <li>Jest</li>
 </ul>
 
-<h2>:hammer: Iniciando o projeto</h2>
+<h2>:hammer: Iniciando o projeto localmente</h2>
 <li>Para instalar dependências do projeto:</li>
     
 ```  
