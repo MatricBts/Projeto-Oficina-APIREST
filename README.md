@@ -8,6 +8,7 @@ assim tendo um controle melhor do estabelecimento.
     <li>Express</li>
     <li>Sqlite3</li>
     <li>Sequelize</li>
+    <li>Jest</li>
 </ul>
 
 <h2>:hammer: Iniciando o projeto</h2>
