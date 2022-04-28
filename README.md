@@ -33,12 +33,9 @@ npm start
 https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
 ```  
     
-    
-![cadastro](https://user-images.githubusercontent.com/55266551/165861027-ea12c351-97e8-4b2d-b56f-3e6f1d58393c.png)
+![cadastro](https://user-images.githubusercontent.com/55266551/165861783-1898301f-8c67-477c-8891-e3e126d9e2d7.png)
 
 
-
-    
 <li>Buscando todos os cadastros da entidade:</li>
 <p>Deve-se usar o metodo GET acessando o link com a entidade desejada</p>
 
@@ -47,9 +44,6 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
 ```  
 
 
-<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
-    
-    
     
 <li>Buscando buscando cadastro com o filtro:</li>
 <p>Deve-se usar o metodo GET acessando o link com a entidade desejada e o filtro pelo body</p>
