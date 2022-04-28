@@ -27,7 +27,7 @@ npm start
     
 <h2>:rocket: Para usar API sem precisar baixar - Hospedagem no Heroku </h2>
 <li>Efetuando um cadastro:</li>
-<p>Deve se usar o metodo post acessando o link com a entidade desejada passando o objeto com os atributos requeridos </p>
+<p>Deve-se usar o metodo POST acessando o link com a entidade desejada passando o objeto com os atributos requeridos </p>
     
 ```  
 https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
@@ -36,6 +36,54 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
     
     
 <p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+    
+<li>Buscando todos os cadastros da entidade:</li>
+<p>Deve-se usar o metodo GET acessando o link com a entidade desejada</p>
+
+```  
+https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
+```  
+
+
+<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+    
+    
+    
+<li>Buscando buscando cadastro com o filtro:</li>
+<p>Deve-se usar o metodo GET acessando o link com a entidade desejada e o filtro pelo body</p>
+
+```  
+https://oficina-mecanica-resilia.herokuapp.com/pecas/atributos   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
+```  
+
+
+<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+    
+    
+    
+<li>Atualizando cadastro da entidade:</li>
+<p>Deve-se usar o metodo PUT acessando o link com a entidade desejada e usando um atributo para busca e outro(s) que irão ser modificados</p>
+
+```  
+https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
+```  
+
+
+<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+
+    
+    
+<li>Deletando cadastro da entidade:</li>
+<p>Deve-se usar o metodo Delete acessando o link com a entidade desejada e passando o atributo como filtro, para ir no cadastro certo</p>
+
+```  
+https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
+```  
+
+
+<p>Botar uma imagem aqui da requisição no Postman ou Insomnia</p>
+    
+    
     
 <h2>:key: Entidades do Projeto</h2>
     <p><b>Peças</b></p>
