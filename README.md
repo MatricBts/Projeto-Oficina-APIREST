@@ -29,8 +29,8 @@ npm start
     <li>Efetuando um cadastro:</li>
    <p>Deve se usar o metodo post acessando o link com a entidade desejada passando o objeto com os atributos requeridos </p>
     
-    ```  
-https://oficina-mecanica-resilia.herokuapp.com/pecas   // Exemplo com a entidade PEÇAS, caso queira outra entidade basta substituir
+```  
+https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PEÇAS, caso queira outra entidade basta substituir
 ```  
     
     
