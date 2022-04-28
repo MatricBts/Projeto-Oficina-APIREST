@@ -25,7 +25,7 @@ npm start
 ```  
     
     
-<h2>:rocket: Para usar API sem precisar baixar </h2>
+<h2>:rocket: Para usar API sem precisar baixar - Hospedagem no Heroku </h2>
 <li>Efetuando um cadastro:</li>
 <p>Deve se usar o metodo post acessando o link com a entidade desejada passando o objeto com os atributos requeridos </p>
     
