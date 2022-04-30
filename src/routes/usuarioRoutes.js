@@ -6,9 +6,9 @@ router
   .get('/usuarios', async (req,res) => {
     await usuarioController.mostrarUsuarios(res);
   })
-  .get('/usuarios/atributos', async (req,res) => {
-    const {body: dados} = req
-    await usuarioController.encontrarPorAtributos(dados, res);
+  .get('/usuarios/:id', async (req,res) => {
+    const {id} = req.params
+    await usuarioController.obterUsuario(id, res);
   })
   .post('/usuarios', async (req, res) => {
     const {body} = req
@@ -21,9 +21,9 @@ router
     const {body: {dados, dadosNovos}} = req;
     await usuarioController.atualizar( dados, dadosNovos, res)
   })
-  .delete('/usuarios', (req, res) => {
-    const {body: dados} = req
-    usuarioController.deletar(dados, res);
+  .delete('/usuarios/:id', (req, res) => {
+    const {id} = req.params
+    usuarioController.deletar(id, res);
   })
 
 module.exports = router;
