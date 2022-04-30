@@ -13,9 +13,10 @@ const usuarioController = {
       })
   },
 
-  encontrarPorAtributos: async function(rDados, res) {
+  obterUsuario: async function(id, res) {
     await database.sync();
-    await Usuario.findOne({where: rDados})
+    await Usuario.fi
+    await Usuario.findOne({where: {id: id}})
       .then((usuario)=>{
         !usuario ? res.send('Usuário não encontrado') : res.json(usuario)
       })
@@ -36,22 +37,22 @@ const usuarioController = {
   },
 
   atualizar: async function(rDados, rNovosDados, res){
-    console.log(rdados)
+    console.log(rDados)
     await database.sync();
     await Usuario.update(rNovosDados,{where: rDados})
       .then((qtdUsuariosEncontrados)=>{
-        qtdUsuariosEncontrados < 1 ? res.send('Usuario não encontrado') : res.send(`${rDados.nome} foi atualizado com sucesso`)
+        qtdUsuariosEncontrados < 1 ? res.send('Usuario não encontrado') : res.send(`Foi atualizado com sucesso`)
       })
       .catch((error)=>{
         res.send(error)
       })
   },
 
-  deletar: async function(rDados, res){
+  deletar: async function(id, res){
     await database.sync();
-    await Usuario.destroy({where: rDados})
+    await Usuario.destroy({where: {id: id}})
       .then((qtdUsuariosEncontrados)=>{
-        qtdUsuariosEncontrados < 1 ? res.send('Usuário não encontrado') : res.send(`${rDados.nome} foi deletado com sucesso`)
+        qtdUsuariosEncontrados < 1 ? res.send('Usuário não encontrado') : res.send(`Foi deletado com sucesso`)
       })
       .catch((error)=>{
           res.send(error)
@@ -60,7 +61,7 @@ const usuarioController = {
 
   popularTabela: async function(res){
     await database.sync();
-    await Pecas.bulkCreate([
+    await Usuario.bulkCreate([
       {nome: 'Valdery', endereco: "Rua Paraiba, 120", cidade: 'Imperatriz', estado: "MA", email: 'valdery@gmail.com'},
       {nome: 'Matric', endereco: "Rua Gonçalves Dias, 505", cidade: 'Salvador', estado: "BA", email: 'matric@gmail.com'},
       {nome: 'Nando', endereco: "Rua Rui Barbosa, 66", cidade: 'Fortaleza', estado: "CE", email: 'nando@gmail.com'},
