@@ -15,7 +15,7 @@ const peçasControllers = {
 
   encontrarPorAtributos: async function(rdados, res) {
     await database.sync();
-    await Pecas.findOne({where: rdados})
+    await Pecas.findAll({where: rdados})
       .then((peca)=>{
         !peca ? res.send('Peça não encontrada') : res.json(peca)
       })
@@ -75,7 +75,6 @@ const peçasControllers = {
         res.send(error)
       })
   }
-
 }
 
 module.exports = peçasControllers;
