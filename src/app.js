@@ -4,6 +4,7 @@ const peças = require('./routes/pecas.routes')
 const fornecedor = require('./routes/fornecedor.routes')
 const vendas = require('./routes/vendas-routes')
 const usuarios = require("./routes/usuarioRoutes")
+const seguros = require("./routes/segurosRoutes")
 
 const routes = (app) => {
   app.route('/').get((req, res) => {
@@ -15,7 +16,8 @@ const routes = (app) => {
     peças,
     fornecedor,
     vendas,
-    usuarios
+    usuarios,
+    seguros
   )
 }
 module.exports = routes;
