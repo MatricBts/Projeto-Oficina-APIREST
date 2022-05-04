@@ -39,7 +39,7 @@ const segurosController = {
   atualizar: async function(rDados, rNovosDados, res){
     console.log(rDados)
     await database.sync();
-    await Usuario.update(rNovosDados,{where: rDados})
+    await Seguros.update(rNovosDados,{where: rDados})
       .then((qtdSegurosEncontrados)=>{
         qtdSegurosEncontrados < 1 ? res.send('Seguradora não encontrada') : res.send(`Foi atualizado com sucesso`)
       })
