@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../infra/db');
 
-const Fornecedor = database.define('fornecedor', {
+const fornecedor = database.define('fornecedor', {
   id:{
     type: Sequelize.INTEGER,
     autoIncrement: true,

@@ -5,7 +5,7 @@ const fornecedorControllers = require('../controllers/fornecedor.controllers')
 
 router
   .get('/fornecedor', async (req,res) => {
-    await fornecedorControllers.mostrarPeças(res);
+    await fornecedorControllers.mostrarFornecedor(res);
   })
   .get('/fornecedor/atributos', async (req,res) => {
     const {body: dados} = req
