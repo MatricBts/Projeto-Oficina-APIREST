@@ -64,9 +64,12 @@ const peçasControllers = {
       {nome: 'filtro', preço: 20, categoria: 'revisão', quantidade: 40, marca: 'wega', garantia: 90},
       {nome: 'terminal direcao', preço: 45, categoria: 'suspensao', quantidade: 8, marca: 'nakata', garantia: 90},
       {nome: 'pivo', preço: 40, categoria: 'suspensao', quantidade: 20, marca: 'nakata', garantia: 90},
-      {nome: 'junta do cabecote', preço: 60, categoria: 'motor', quantidade: 10, marca: 'sabo', garantia: 90},
       {nome: 'aditivo', preço: 25, categoria: 'arrefecimento', quantidade: 60, marca: 'paraflu', garantia: 90},
-      {nome: 'reservatorio', preço: 55, categoria: 'arrefecimento', quantidade: 3, marca: 'gonel', garantia: 90}
+      {nome: 'reservatorio', preço: 55, categoria: 'arrefecimento', quantidade: 3, marca: 'gonel', garantia: 90},
+      {nome: 'bomba d agua', preço: 185, categoria: 'arrefecimento', quantidade: 1, marca: 'indisa', garantia: 90},
+      {nome: 'jogo de velas', preço: 65, categoria: 'ignicao', quantidade: 2, marca: 'ngk', garantia: 90},
+      {nome: 'cabos de vela', preço: 85, categoria: 'ignicao', quantidade: 2, marca: 'ngk', garantia: 90},
+      {nome: 'junta do cabecote', preço: 60, categoria: 'motor', quantidade: 10, marca: 'sabo', garantia: 90},
     ])
       .then(()=>{
         res.send('tabela populada')
