@@ -1,7 +1,9 @@
 const express = require("express");
 const peças = require('./routes/pecas.routes')
+
 const fornecedor = require('./routes/fornecedor.routes')
 const vendas = require('./routes/vendas-routes')
+const usuarios = require("./routes/usuarioRoutes")
 
 const routes = (app) => {
   app.route('/').get((req, res) => {
@@ -12,7 +14,8 @@ const routes = (app) => {
     express.json(),
     peças,
     fornecedor,
-    vendas
+    vendas,
+    usuarios
   )
 }
 module.exports = routes;
