@@ -1,6 +1,7 @@
 const database = require('../infra/db')
 const Usuario = require('../models/UsuarioModel')
 
+
 const usuarioController = {
   mostrarUsuarios: async function(res) {
     await database.sync();
@@ -15,7 +16,6 @@ const usuarioController = {
 
   obterUsuario: async function(id, res) {
     await database.sync();
-    await Usuario.fi
     await Usuario.findOne({where: {id: id}})
       .then((usuario)=>{
         !usuario ? res.send('Usuário não encontrado') : res.json(usuario)
@@ -37,7 +37,6 @@ const usuarioController = {
   },
 
   atualizar: async function(rDados, rNovosDados, res){
-    console.log(rDados)
     await database.sync();
     await Usuario.update(rNovosDados,{where: rDados})
       .then((qtdUsuariosEncontrados)=>{
