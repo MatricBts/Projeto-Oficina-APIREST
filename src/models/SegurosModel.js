@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('./../infra/db');
 
-const Cliente = database.define('Seguradoras', {
+const Seguros = database.define('Seguros', {
   id:{
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -20,4 +20,4 @@ const Cliente = database.define('Seguradoras', {
    
 })
 
-module.exports = Seguradoras;
+module.exports = Seguros;
