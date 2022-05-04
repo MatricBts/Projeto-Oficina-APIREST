@@ -79,4 +79,4 @@ const fornecedorControllers = {
 
 }
 
-module.exports = peçasControllers;
+module.exports = fornecedorControllers;
