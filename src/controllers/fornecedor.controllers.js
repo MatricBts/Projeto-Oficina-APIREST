@@ -1,5 +1,5 @@
 const database = require('../infra/db');
-const fornecedor = require('../models/fornecedor.model');
+const Fornecedor = require('../models/fornecedor.model');
 
 
 const fornecedorControllers = {
