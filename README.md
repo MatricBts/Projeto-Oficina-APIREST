@@ -93,3 +93,13 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
     quantidade
     marca
     garantia
+
+
+    <p><b>Usuário</b></p>
+    
+    id - PK
+    nome - required
+    endereco - required
+    cidade - required
+    estado - required
+    email - required 
