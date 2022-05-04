@@ -28,7 +28,6 @@ const Cliente = database.define('cliente', {
       type: Sequelize.STRING,
       allowNull: false
   }
-   
 })
 
 module.exports = Cliente;

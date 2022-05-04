@@ -1,8 +1,9 @@
 const database = require('../infra/db')
 const Usuario = require('../models/UsuarioModel')
 
+
 const usuarioController = {
-  mostrarUsuarios: async function(res) {
+  mostrarUsuarios: async function(req, res) {
     await database.sync();
     await Usuario.findAll()
       .then((usuarios)=>{
@@ -13,9 +14,9 @@ const usuarioController = {
       })
   },
 
-  obterUsuario: async function(id, res) {
+  obterUsuario: async function(req, res) {
+    const {id} = req.params
     await database.sync();
-    await Usuario.fi
     await Usuario.findOne({where: {id: id}})
       .then((usuario)=>{
         !usuario ? res.send('Usuário não encontrado') : res.json(usuario)
@@ -25,9 +26,10 @@ const usuarioController = {
       })
   },
 
-  cadastrar: async function(rUsuario, res){
+  cadastrar: async function(req, res){
+    const novoUsuario = req.body
     await database.sync();
-    await Usuario.create(rUsuario)
+    await Usuario.create(novoUsuario)
       .then(()=>{
         res.send('Usuário cadastrado!')
       })
@@ -36,30 +38,32 @@ const usuarioController = {
       })
   },
 
-  atualizar: async function(rDados, rNovosDados, res){
-    console.log(rDados)
+  atualizar: async function(req, res){
+    const {id} = req.params
+    const novosDados = req.body
     await database.sync();
-    await Usuario.update(rNovosDados,{where: rDados})
-      .then((qtdUsuariosEncontrados)=>{
-        qtdUsuariosEncontrados < 1 ? res.send('Usuario não encontrado') : res.send(`Foi atualizado com sucesso`)
+    await Usuario.update(novosDados,{where: {id:id}})
+      .then(() => {
+        res.send('Usuário atualizado com sucesso.')
       })
       .catch((error)=>{
         res.send(error)
       })
   },
 
-  deletar: async function(id, res){
+  deletar: async function(req, res){
+    const {id} = req.params
     await database.sync();
     await Usuario.destroy({where: {id: id}})
-      .then((qtdUsuariosEncontrados)=>{
-        qtdUsuariosEncontrados < 1 ? res.send('Usuário não encontrado') : res.send(`Foi deletado com sucesso`)
+      .then(() => {
+        res.send('Usuário destruido com sucesso.')
       })
       .catch((error)=>{
           res.send(error)
       })
   },
 
-  popularTabela: async function(res){
+  popularTabela: async function(req, res){
     await database.sync();
     await Usuario.bulkCreate([
       {nome: 'Valdery', endereco: "Rua Paraiba, 120", cidade: 'Imperatriz', estado: "MA", email: 'valdery@gmail.com'},
