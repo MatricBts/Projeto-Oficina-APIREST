@@ -4,26 +4,22 @@ const usuarioController = require('../controllers/usuarioController')
 
 router
   .get('/usuarios', async (req,res) => {
-    await usuarioController.mostrarUsuarios(res);
+    await usuarioController.mostrarUsuarios(req, res);
   })
   .get('/usuarios/:id', async (req,res) => {
-    const {id} = req.params
-    await usuarioController.obterUsuario(id, res);
+    await usuarioController.obterUsuario(req, res);
   })
   .post('/usuarios', async (req, res) => {
-    const {body} = req
-    usuarioController.cadastrar(body, res);
+    usuarioController.cadastrar(req, res);
   })
   .post('/usuarios/populate', async (req, res)=>{
-    await usuarioController.popularTabela(res)
+    await usuarioController.popularTabela(req, res)
   })
-  .put('/usuarios', async (req, res) => {
-    const {body: {dados, dadosNovos}} = req;
-    await usuarioController.atualizar( dados, dadosNovos, res)
+  .put('/usuarios/:id', async (req, res) => {
+    await usuarioController.atualizar(req, res)
   })
   .delete('/usuarios/:id', (req, res) => {
-    const {id} = req.params
-    usuarioController.deletar(id, res);
+    usuarioController.deletar(req, res);
   })
 
 module.exports = router;
