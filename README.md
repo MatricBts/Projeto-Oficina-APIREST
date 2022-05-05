@@ -115,7 +115,7 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
     Bairro
     E-mail 
     
-    <p><b>Fornecedor</b></p>
+<p><b>Fornecedor</b></p>
     
     id - PK
     nome - required
@@ -143,3 +143,8 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
     qtd
     vencimento
 
+<p><b>Seguro</b></p>
+    
+    id - PK
+    Nome - required
+    Email - required
