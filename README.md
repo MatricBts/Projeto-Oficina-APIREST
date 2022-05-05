@@ -114,3 +114,32 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
     CEP 
     Bairro
     E-mail 
+    
+    <p><b>Fornecedor</b></p>
+    
+    id - PK
+    nome - required
+    marca 
+    pedido
+    vencimento
+    marca
+    garantia
+
+<p><b>Usuario</b></p>
+    
+    id - PK
+    nome - required
+    endereco 
+    cidade
+    estado
+    email
+
+<p><b>Vendas</b></p>
+    
+    id - PK
+    Data - required
+    Preço - required
+    pedido
+    qtd
+    vencimento
+
