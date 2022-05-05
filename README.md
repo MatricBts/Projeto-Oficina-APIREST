@@ -93,3 +93,24 @@ https://oficina-mecanica-resilia.herokuapp.com/pecas   // Link com a entidade PE
     quantidade
     marca
     garantia
+
+<p><b>Funcionários</b></p>
+    
+    id - PK
+    matrícula - required
+    nome - required
+    telefone - required
+    admissão
+    nCTPS
+    PIS
+    Cargo
+    Salário
+    CPF 
+    RG 
+    EstadoCivil
+    Nascimento 
+    Jornada Contratual 
+    Endereço 
+    CEP 
+    Bairro
+    E-mail 
