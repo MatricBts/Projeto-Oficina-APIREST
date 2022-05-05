@@ -5,6 +5,7 @@ const fornecedor = require('./routes/fornecedor.routes')
 const vendas = require('./routes/vendas-routes')
 const usuarios = require("./routes/usuarioRoutes")
 const funcionario = require ("./routes/funcionario.routes")
+const seguros = require("./routes/segurosRoutes")
 
 const routes = (app) => {
   app.route('/').get((req, res) => {
@@ -18,6 +19,8 @@ const routes = (app) => {
     vendas,
     usuarios, 
     funcionario,
+    usuarios,
+    seguros
   )
 }
 module.exports = routes;

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('./../infra/db');
 
-const Cliente = database.define('cliente', {
+const Seguros = database.define('Seguros', {
   id:{
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -12,22 +12,12 @@ const Cliente = database.define('cliente', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  endereco:{
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  cidade: {
-      type: Sequelize.STRING,
-      allowNull: false
-  }, 
-  estado: {
-      type: Sequelize.STRING,
-      allowNull: false
-  },
+  
   email: {
       type: Sequelize.STRING,
       allowNull: false
   }
+   
 })
 
-module.exports = Cliente;
+module.exports = Seguros;
